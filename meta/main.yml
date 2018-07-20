@@ -1,9 +1,9 @@
 ---
 galaxy_info:
-  author: Bastien DRONNEAU
+  author: OPS MeilleursAgents
   description: Traefik custom installation
-  company: Bast Factory
-  issue_tracker_url: http://example.com/issue/tracker
+  company: MeilleursAgents
+  issue_tracker_url: https://github.com/MeilleursAgents/ma.traefik/issues
   license: MIT
 
   min_ansible_version: 2.4

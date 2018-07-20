@@ -1,14 +1,14 @@
 ---
-btraefik_user: "traefik"
-btraefik_group: "traefik"
-btraefik_alternate_groups: ""
+matraefik_user: "traefik"
+matraefik_group: "traefik"
+matraefik_alternate_groups: ""
 
-btraefik_version: "1.5.2"
-btraefik_binary_url: "https://github.com/containous/traefik/releases/download/v{{ btraefik_version }}/traefik_linux-amd64"
+matraefik_version: "1.5.2"
+matraefik_binary_url: "https://github.com/containous/traefik/releases/download/v{{ matraefik_version }}/traefik_linux-amd64"
 
-btraefik_systemd_env_vars: []
-btraefik_systemd_exec_start: "/usr/bin/traefik --configFile=/etc/traefik/config.toml"
+matraefik_systemd_env_vars: []
+matraefik_systemd_exec_start: "/usr/bin/traefik --configFile=/etc/traefik/config.toml"
 
-btraefik_acme_email: ""
+matraefik_acme_email: ""
 
-btraefik_conf_template: "traefik.toml.j2"
+matraefik_conf_template: "traefik.toml.j2"

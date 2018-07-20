@@ -16,7 +16,7 @@ def test_files(host):
         assert f.group == 'traefik'
 
 
-def test_btraefik_bin(host):
+def test_matraefik_bin(host):
     files = ['/usr/bin/traefik', '/etc/systemd/system/traefik.service']
     for file in files:
         f = host.file(file)

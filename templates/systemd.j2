@@ -5,9 +5,9 @@
 Description=Traefik
 
 [Service]
-User={{ btraefik_user }}
-Group={{ btraefik_group }}
-{% for env in btraefik_systemd_env_vars %}
+User={{ matraefik_user }}
+Group={{ matraefik_group }}
+{% for env in matraefik_systemd_env_vars %}
 Environment={{ env }}
 {% endfor %}
 ExecStart=/usr/bin/traefik --configFile=/etc/traefik/conf.toml

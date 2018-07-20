@@ -9,15 +9,15 @@
 - name: "Create app group"
   become: true
   group:
-    name: "{{ btraefik_group }}"
+    name: "{{ matraefik_group }}"
     state: "present"
 
 - name: "Create app user"
   become: true
   user:
-    name: "{{ btraefik_user }}"
-    groups: "{{ btraefik_alternate_groups }}"
-    group: "{{ btraefik_group }}"
+    name: "{{ matraefik_user }}"
+    groups: "{{ matraefik_alternate_groups }}"
+    group: "{{ matraefik_group }}"
     append: 'yes'
 
 - name: "Create basics directories"
@@ -25,8 +25,8 @@
   file:
     path: "{{ item }}"
     state: directory
-    owner: "{{ btraefik_user }}"
-    group: "{{ btraefik_group }}"
+    owner: "{{ matraefik_user }}"
+    group: "{{ matraefik_group }}"
     mode: 0755
   with_items:
     - "/etc/traefik"
@@ -34,7 +34,7 @@
 
 - name: "Download Traefik binary"
   get_url:
-    url: "{{ btraefik_binary_url }}"
+    url: "{{ matraefik_binary_url }}"
     dest: "/usr/bin/traefik"
     owner: root
     group: root
@@ -51,10 +51,10 @@
 - name: Create configuration
   become: true
   template:
-    src: "{{ btraefik_conf_template }}"
+    src: "{{ matraefik_conf_template }}"
     dest: "/etc/traefik/conf.toml"
-    owner: "{{ btraefik_user }}"
-    group: "{{ btraefik_group }}"
+    owner: "{{ matraefik_user }}"
+    group: "{{ matraefik_group }}"
     mode: 0644
   notify:
     - restart traefik systemd unit
